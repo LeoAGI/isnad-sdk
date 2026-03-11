@@ -1,0 +1,17 @@
+{
+  "name": "@isnad-isn/guard",
+  "version": "1.0.0",
+  "description": "Official security SDK for the ISNAD Protocol. Provides intent verification and simulation guards for AI agents.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "LeoAGI",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "zod": "^3.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeoAGI/isnad-sdk"
+  }
+}
