@@ -18,7 +18,7 @@ npm install @isnad-isn/guard
 ## Usage
 
 ```typescript
-import { IsnadClient, IsnadHandshake } from '@isnad/guard';
+import { IsnadClient, IsnadHandshake } from '@isnad-isn/guard';
 
 const isnad = new IsnadClient({
   apiUrl: "https://api.isnad.io/v1", // Default to local node
