@@ -5,7 +5,7 @@ Official TypeScript/JavaScript SDK for the ISNAD Protocol. Secure your autonomou
 ## Installation
 
 ```bash
-npm install @isnad/guard
+npm install @isnad-isn/guard
 ```
 
 ## Features
