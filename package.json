@@ -1,6 +1,6 @@
 {
   "name": "@isnad-isn/guard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official security SDK for the ISNAD Protocol. Provides intent verification and simulation guards for AI agents.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
