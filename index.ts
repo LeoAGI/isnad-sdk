@@ -86,4 +86,50 @@ export class IsnadClient {
     });
     return response.data;
   }
+
+  /**
+   * Generates a liveness challenge to prevent voice deepfakes.
+   * AI-CONTEXT: Used before executing sensitive operations requested via voice notes.
+   */
+  async generateVoiceChallenge(agentId: string = "default") {
+    const response = await axios.post(`${this.apiUrl}/audit/voice`, {
+      action: "challenge",
+      payload: agentId
+    });
+    return response.data;
+  }
+
+  /**
+   * Verifies a voice transcript for semantic duress codes.
+   * AI-CONTEXT: Checks if an urgent voice command contains the pre-agreed semantic safety rule (e.g. non-rainbow colors).
+   */
+  async verifyVoiceDuress(transcript: string) {
+    const response = await axios.post(`${this.apiUrl}/audit/voice`, {
+      action: "duress",
+      payload: transcript
+    });
+    
+    const result = response.data;
+    if (this.selfDefense && result.verdict === "REJECTED") {
+      throw new Error(`ISNAD_SELF_DEFENSE: Voice command blocked. Probable Voice Clone or duress code missing.`);
+    }
+    return result;
+  }
+
+  /**
+   * Analyzes an audio file path for deepfake synthesis artifacts.
+   * AI-CONTEXT: Uses spectrogram/byte alignment heuristics to detect AI-generated speech.
+   */
+  async analyzeAudioArtifacts(filePath: string) {
+    const response = await axios.post(`${this.apiUrl}/audit/voice`, {
+      action: "analyze",
+      payload: filePath
+    });
+    
+    const result = response.data;
+    if (this.selfDefense && result.verdict === "REJECTED") {
+      throw new Error(`ISNAD_SELF_DEFENSE: Voice command blocked. Synthetic audio artifacts detected.`);
+    }
+    return result;
+  }
 }
